@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cine conecta
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://cineconectav2.postgres.database.azure.com:5432/cineconecta}
+    username: ${SPRING_DATASOURCE_USERNAME:cine_conecta_admin}
+    password: ${SPRING_DATASOURCE_PASSWORD:cubito1234!}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 2
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 20000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 60MB
+
+#azure:
+#  storage:
+#    connection_string: ${AZURE_STORAGE_CONNECTION}
+#    container_name: ${AZURE_STORAGE_NAME}
