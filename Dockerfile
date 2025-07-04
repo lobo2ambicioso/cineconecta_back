@@ -10,4 +10,3 @@ WORKDIR /cine_connecta
 COPY --from=BUILD /cine_connecta/target/*.jar ./cine-connecta.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "cine-connecta.jar"]
-
