@@ -21,10 +21,6 @@ public class Auth {
         return ResponseEntity.ok("cine conecta is up and running");
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
-        return ResponseEntity.ok(authService.login(request));
-    }
 
     @PostMapping("/register")
     public ResponseEntity<CineResponse> registerUser(@RequestBody Cinephile cinephile) {
